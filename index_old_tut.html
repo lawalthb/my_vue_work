@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>my_project</title>
+  </head>
+  <body>
+    <div id = "app">  
+      <h1>Firstname : {{firstname}}</h1>  
+      <h1>Lastname : {{lastname}}</h1>  
+      <div>{{htmlcontent}}</div>  
+      <span v-bind:title="message">  
+        Hover mouse over me for a few seconds  
+        and see a dynamically bound title which I have set!  
+      </span>  <br>
+      <span v-if="seen">This is visible to you</span> <br>
+      <span v-else-if=>You can't see me </span>  <br>
+      <img v-bind:src = "imgsrc" width = "300" height = "250" /> 
+   </div> 
+   
+   <div id="app-4">  
+    <ol>  
+      <li v-for="todo in todos">  
+        {{ todo.text }}  
+      </li>  
+    </ol>  
+  </div>  
+
+  <div id="app2">  
+    <p>{{ message2 }}</p>  
+    <input v-model="message2">  
+    <button v-on:click="reverseMessage">Click Here to Reverse Message</button>  
+</div>  
+
+<div id = "component_test1">  
+  <testcomponent></testcomponent>  
+</div>  
+<div id = "component_test2">  
+  <testcomponent></testcomponent>  
+</div>  
+
+<div id = "databinding">  
+  <component v-bind:is = "view"></component>  <br>
+  <component v-bind:is = "view2"></component>  
+</div>  
+
+<div id = "com_props">  
+  FirstName : <input type = "text" v-model = "firstname" /> <br/><br/>  
+  LastName : <input type = "text" v-model = "lastname"/> <br/><br/>  
+  <h2>My name is {{firstname}} {{lastname}}</h2>  
+  <h2>Retrieve name by using computed property : {{getfullname}}</h2>  
+
+  <h2 style = "background-color:gray;">Random No from computed property: {{getrandomno}}</h2>  
+         <h2>Random No from method: {{getrandomno1()}}</h2>  
+         <h2  style = "background-color:gray;">Random No from computed property: {{getrandomno}}</h2>  
+         <h2  style = "background-color:gray;">Random No from computed property: {{getrandomno}}</h2>  
+         <h2>Random No from method: {{getrandomno1()}}</h2>  
+</div>  
+<div id="app7">  
+  <button v-on:click = "displaynumbers">Click Me to Add No.</button>  
+         <h2> Add Number {{ num1 }} + {{ num2 }} = {{total}}</h2>  <br>
+         <button @click = "displaynumbers_minus"  v-bind:style = "styleobj" >Click ME</button>  
+      </div>  
+
+      <div id = "key_1">  
+        <input type = "text" v-on:keyup.down = "showinputvalue" v-bind:style = "styleobj" placeholder = "Type your name here.."/>  
+        <h3> {{name}}</h3>  
+     </div>  
+     <div id = "databinding3">  
+      <h3>{{title}}</h3>  
+      <a href = "hreflink" target = "_blank"> Click Here </a> <br/>  
+      <a href = "{{hreflink}}" target = "_blank">Click Here </a>  <br/>  
+      <a v-bind:href = "hreflink" target = "_blank">Click Here </a>   <br/>  
+   </div>  
+
+
+   <div id = "databinding6">  
+    <h3> The .number modifier example</h3>  
+    <span style = "font-size:20px;">Enter Age:</span> <input v-model.number = "age" type = "number">  
+    <br/>  
+    <br/>  
+    <hr/>  
+    <h3> The .lazy modifier example</h3>  
+   <span style = "font-size:20px;">Enter Message:</span> <input v-model.lazy = "msg">  
+   <h4>Display Message : {{msg}}</h4>  
+   <br/>  
+   <hr/>  
+   <h3> The .trim modifier example</h3>  
+   <span style = "font-size:20px;">Enter Message : </span><input v-model.trim = "message">  
+   <h4>Display Message : {{message}}</h4>  
+</div>  
+
+
+<style>  
+  .shiftx-enter-active, .shiftx-leave-active {  
+     transition: all 2s ease-in-out;  
+  }  
+  .shiftx-enter, .shiftx-leave-to /* .fade-leave-active below version 2.1.8 */ {  
+     transform :  translateX(100px);  
+  }  
+</style>
+
+<div id = "databinding89">  
+  <p> Click at the below button to see transition effect.</p>  
+ <button v-on:click = "show = !show">Click Here</button>  
+ <transition name = "shiftx">  
+    <p v-show = "show">  
+       <img src = "https://www.flowerpower.com.au/media/catalog/product/image/287189f77f/love-you-rose.jpg" style = "width:100px;height:100px;" />  
+    </p>  
+ </transition>  
+</div> 
+    <!-- built files will be auto injected -->
+  </body>
+</html>

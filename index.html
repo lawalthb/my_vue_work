@@ -1,0 +1,31 @@
+<html>  
+   <head>  
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>my_project</title>
+    </head>  
+    <body>  
+      <div id = "router_1">  
+         <h2>This is Routing Example</h2>  
+         <p>  
+<!-- use router-link component for navigation. -->  
+<!-- `<router-link>` will be rendered as an `<a>` tag by default -->  
+            <router-link to = "/route1">Click on Router Link 1</router-link>  
+            <router-link to = "/route2"> Click on Router Link 2</router-link>  
+         </p>  
+         <!-- route outlet -->  
+         <!-- component matched by the route will render here -->  
+         <router-view></router-view>  
+      </div>  
+
+      <script type = "text/javascript">  
+        const Route1 = { template: '<div style = "border-radius:30px;background-color:lightpink;width:300px;height:100px;margin:10px;font-size:25px;padding:10px;">You are seeing router link 1</div>' }  
+        const Route2 = { template: '<div style = "border-radius:20px;background-color:lightgreen;width:300px;height:100px;margin:10px;font-size:25px;padding:10px;"> You are seeing router link 2</div>' }  
+        const routes = [  
+           { path: '/route1', component: Route1 },  
+           { path: '/route2', component: Route2 }  
+        ];  
+        const router = new VueRouter({  
+           routes // short for `routes: routes`  
+        });  
+     </script>  
